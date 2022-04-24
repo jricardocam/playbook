@@ -18,6 +18,19 @@ app.get('/v1/explorers',(req,res)=>{
     res.status(200).json(explorers)
 })
 
+app.get('/v1/explorers/:id',(req,res)=>{
+    console.log(`API Explorers GET request ${new Date()}`)
+    console.log(`Getting Explorers with id ${req.params.id}`)
+    const explorer={id:1, name:"explo1"}
+    res.status(200).json(explorer)
+})
+
+/*app.0post('/v1/explorers',(req,res)=>{
+    console.log(`API Explorers POST request ${new Date()}`)
+    const requestBody=req.body
+    res.status(201).json({message: "Created"})
+})*/
+
 // Con esto inicializamos esta app
 app.listen(port, () => {
  console.log(`Example app listening on port ${port}`)
