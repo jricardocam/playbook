@@ -6,7 +6,20 @@ app.use(express.json()) // Indicamos que usaremos JSON
 // Puerto en que vamos a ver nuestra app: localhost:3000
 const port = 3000
 
+//HTTP METHODS
+app.get('/v1/explorers',(req,res)=>{
+    console.log(`API Explorers GET ALL request ${new Date()}`)
+    const explorer1 ={id:1, name:"explo1"}
+    const explorer2 ={id:2, name:"explo2"}
+    const explorer3 ={id:3, name:"explo3"}
+    const explorer4 ={id:4, name:"explo4"}
+    const explorer5 ={id:5, name:"explo5"}
+    const explorers=[explorer1,explorer2,explorer3,explorer4,explorer5]
+    res.status(200).json(explorers)
+})
+
 // Con esto inicializamos esta app
 app.listen(port, () => {
  console.log(`Example app listening on port ${port}`)
 })
+
